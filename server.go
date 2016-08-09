@@ -1,7 +1,6 @@
 package cronserver
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/deyring/gocron"
@@ -35,11 +34,8 @@ func CreateNewCronServer(version, date string) (*CronServer, error) {
 
 	// Listen and Server in 0.0.0.0:80
 	go func() {
-		fmt.Println("startin webserver")
-		server.Webserver.Run(":8082")
+		server.Webserver.Run(":80")
 	}()
-
-	fmt.Println("return new server")
 
 	return &server, nil
 }
